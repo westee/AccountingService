@@ -1,6 +1,6 @@
-package com.westee.accounting.controllers;
+package com.westee.accounting.controller;
 
-import com.westee.accounting.model.Greeting;
+import com.westee.accounting.model.service.Greeting;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
