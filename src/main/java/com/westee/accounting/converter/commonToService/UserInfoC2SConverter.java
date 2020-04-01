@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @NoArgsConstructor
-public class UserInfoConverter extends Converter<UserInfo, com.westee.accounting.model.service.UserInfo> {
+public class UserInfoC2SConverter extends Converter<UserInfo, com.westee.accounting.model.service.UserInfo> {
     @Override
     protected com.westee.accounting.model.service.UserInfo doForward(UserInfo userInfo) {
         return com.westee.accounting.model.service.UserInfo.builder()
@@ -19,7 +19,7 @@ public class UserInfoConverter extends Converter<UserInfo, com.westee.accounting
 
     @Override
     protected UserInfo doBackward(com.westee.accounting.model.service.UserInfo userInfo) {
-        throw UserInfo.builder()
+        return UserInfo.builder()
                 .id(userInfo.getId())
                 .password(userInfo.getPassword())
                 .username(userInfo.getUsername())
