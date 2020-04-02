@@ -4,7 +4,9 @@ import com.westee.accounting.converter.persistenceToManager.UserInfoP2CConverter
 import com.westee.accounting.dao.UserInfoDAO;
 import com.westee.accounting.model.common.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserInfoManagerImpl implements UserInfoManager {
     private final UserInfoDAO userInfoDAO;
     private final UserInfoP2CConverter userInfoP2CConverter;

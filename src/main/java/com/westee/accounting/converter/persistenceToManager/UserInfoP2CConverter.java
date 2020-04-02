@@ -10,11 +10,19 @@ import org.springframework.stereotype.Component;
 public class UserInfoP2CConverter extends Converter<UserInfo, com.westee.accounting.model.common.UserInfo> {
     @Override
     protected com.westee.accounting.model.common.UserInfo doForward(UserInfo userInfo) {
-        return com.westee.accounting.model.common.UserInfo.builder().build();
+        return com.westee.accounting.model.common.UserInfo.builder()
+                .id(userInfo.getId())
+                .username(userInfo.getUsername())
+                .password(userInfo.getPassword())
+                .build();
     }
 
     @Override
     protected UserInfo doBackward(com.westee.accounting.model.common.UserInfo userInfo) {
-        return UserInfo.builder().build();
+        return UserInfo.builder()
+                .id(userInfo.getId())
+                .username(userInfo.getUsername())
+                .password(userInfo.getPassword())
+                .build();
     }
 }

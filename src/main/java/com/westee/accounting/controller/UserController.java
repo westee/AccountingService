@@ -26,6 +26,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserInfo getUserInfoByUserId(@PathVariable("id") Long userId){
+        log.debug("根据id查询用户信息 {}", userId);
         com.westee.accounting.model.common.UserInfo userInfo = userInfoManager.getUserInfoByUserId(userId);
         return userInfoC2SConverter.convert(userInfo);
     }
